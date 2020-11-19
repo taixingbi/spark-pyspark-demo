@@ -1,46 +1,16 @@
 
-### ubuntu setup pip 
+### install 
 ```
-python3 -m venv myvenv
-source myvenv/bin/activate
+conda create -n sparknlp python=3.6 -y
+conda activate sparknlp
+pip install spark-nlp==2.6.3 pyspark==2.4.4
+pip install numpy
+pip install jupyter
+pip install environment-kernels
+```
+https://nlp.johnsnowlabs.com/docs/en/install
 
-pip install --upgrade pip
-pip install -r requirements.txt
 
-pip install environment_kernels
+#### run 
 jupyter notebook
-```
-
-
-
-### ubuntu 18.04 install spark(pyspark) with java8
-https://towardsdatascience.com/installing-pyspark-with-java-8-on-ubuntu-18-04-6a9dea915b5b
-
-
-### run pyspark demo
-https://github.com/edyoda/pyspark-tutorial
-
-
-### docker spark
-###### dockerhub
-https://hub.docker.com/_/microsoft-mmlspark-release
-
-###### 
-docker run -it -v ~/spark/share:/tmp/ -p 8888:8888 -p 4040:4040 -e ACCEPT_EULA=yes mcr.microsoft.com/mmlspark/release
-
-
-
-###### del docker
-```
-docker stop $(docker ps -aq)
-docker rm $(docker ps -aq)
-docker rmi $(docker images -q)
-```
-
-###### java 
-```
-mvn compile
-mvn package
-java -jar target/app-0.0.0.jar
-```
 
